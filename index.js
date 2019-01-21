@@ -13,7 +13,7 @@ app.get('/',(req,res) =>{
 
 app.post('/webhook',(req,res) =>{
     let body = req.body;
-    let event = body.event[0];
+    let events = body.events[0];
     let source = event.source;
     let message = event.message;
     console.log(`body ===> `);
