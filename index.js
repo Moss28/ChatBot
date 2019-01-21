@@ -16,9 +16,11 @@ app.post('/webhook',(req,res) =>{
     let event = body.event[0];
     let source = event.source;
     let message = event.message;
-    console.log(`source ===> ${source}`);
+    console.log(`body ===> `);
+    console.log(body);
+    console.log(`source ===> `);
     console.log(source);
-    console.log(`message ===> ${message}`);
+    console.log(`message ===> `);
     console.log(message);
     let respon = {
         status : 'ok',
