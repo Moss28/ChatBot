@@ -1,8 +1,9 @@
 const express = require('express')
 var bodyParser = require('body-parser')
 const app = express();
-const port = process.env.PORT||5000
 const line = require('@line/bot-sdk');
+const port = process.env.PORT||5000
+
 
 const client = new line.Client({
     channelAccessToken: 'ANOX1QMOTFBIbkZJfyAd/seoFWVhEhtOwzgiqi3HZkmoJSzyTTyl2darpUtsVKZj+Ytm1FjWviHZHFmGQ26Ue/Ar3PNsFVFn3D/AG9p+8exS5I633TiLLhEbdcWpxG8tB5Dj3w6ZOK7gHchYTHsuVAdB04t89/1O/w1cDnyilFU='
