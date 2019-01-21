@@ -26,12 +26,14 @@ app.get('/',(req,res) =>{
       
    });
 
-   conn.connect(function(err) {
+  
+
+app.post('/webhook',(req,res) =>{
+
+     conn.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
   });
-
-app.post('/webhook',(req,res) =>{
     let body = req.body;
     let events = body.events[0];
     let source = events.source;
