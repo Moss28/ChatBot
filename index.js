@@ -15,6 +15,11 @@ const port = process.env.PORT||5000
 const client = new line.Client({
     channelAccessToken: 'ANOX1QMOTFBIbkZJfyAd/seoFWVhEhtOwzgiqi3HZkmoJSzyTTyl2darpUtsVKZj+Ytm1FjWviHZHFmGQ26Ue/Ar3PNsFVFn3D/AG9p+8exS5I633TiLLhEbdcWpxG8tB5Dj3w6ZOK7gHchYTHsuVAdB04t89/1O/w1cDnyilFU='
   });
+  
+conn.connect(function(err) {
+    if (err) throw console.err();
+    console.log("Connected!");
+  });
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -26,10 +31,6 @@ app.get('/',(req,res) =>{
       
    });
 
-conn.connect(function(err) {
-    if (err) throw console.err();
-    console.log("Connected!");
-  });
 
   
 
