@@ -14,7 +14,7 @@ app.get('/',(req,res) =>{
 app.post('/webhook',(req,res) =>{
     let body = req.body;
     let events = body.events[0];
-    let source = event.source;
+    let source = events.source;
     let message = events.message;
     console.log(`body ===> `);
     console.log(body); 
