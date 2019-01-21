@@ -28,8 +28,9 @@ app.get('/',(req,res) =>{
         })
        let query =  conn.query(`select * from reply where reqdata = ${text}`,(error,result) =>{
         if(error) throw console.error();
-       
+       else {console.log('connect database');}
         })
+       
         console.log(query.sql)
         conn.end();
    });
