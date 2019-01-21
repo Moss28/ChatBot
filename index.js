@@ -31,7 +31,7 @@ app.get('/',(req,res) =>{
 app.post('/webhook',(req,res) =>{
 
      conn.connect(function(err) {
-    if (err) throw err;
+    if (err) throw console.err();
     console.log("Connected!");
   });
     let body = req.body;
