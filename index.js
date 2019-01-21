@@ -47,11 +47,10 @@ app.post('/webhook',(req,res) =>{
 switch(type){
     case 'message':
 
-    conn.connect((err) =>{
-        if(err) throw err;
-       else {
-           console.log('connect database');
-        }
+    conn.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+      });
     
     let type = message.type;
     console.log(`[message type] ===> ${type}`);
