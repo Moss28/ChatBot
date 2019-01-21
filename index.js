@@ -22,17 +22,8 @@ app.use(bodyParser.json())
 
 app.get('/',(req,res) =>{
     res.send({status: 'ok'});
-    conn.connect((err) =>{
-        if(err) throw err;
-            
-        })
-       let query =  conn.query(`select * from reply where reqdata = ${text}`,(error,result) =>{
-        if(error) throw console.error();
-       else {console.log('connect database');}
-        })
-       
-        console.log(query.sql)
-        conn.end();
+   
+      
    });
 
 app.post('/webhook',(req,res) =>{
@@ -55,6 +46,12 @@ app.post('/webhook',(req,res) =>{
 
 switch(type){
     case 'message':
+
+    conn.connect((err) =>{
+        if(err) throw err;
+       else {
+           console.log('connect database');
+        }
     
     let type = message.type;
     console.log(`[message type] ===> ${type}`);
