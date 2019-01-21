@@ -26,6 +26,11 @@ app.get('/',(req,res) =>{
       
    });
 
+   conn.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+  });
+
 app.post('/webhook',(req,res) =>{
     let body = req.body;
     let events = body.events[0];
@@ -47,10 +52,7 @@ app.post('/webhook',(req,res) =>{
 switch(type){
     case 'message':
 
-    conn.connect(function(err) {
-        if (err) throw err;
-        console.log("Connected!");
-      });
+  
     
     let type = message.type;
     console.log(`[message type] ===> ${type}`);
