@@ -43,7 +43,7 @@ switch(type){
     let id = message.id;
         if(type =='text'){
             let text = message.text;
-            const message = [
+            const messageResponse = [
             {
                 type: 'text',
                 text: 'Moss สวัสดีครับ'
@@ -56,7 +56,7 @@ switch(type){
         
         ];
             
-           replyMessage(replyToken, message)
+           replyMessage(replyToken, messageResponse)
             }
 
         else if(type =='sticker'){
