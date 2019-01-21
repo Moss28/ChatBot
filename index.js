@@ -2,6 +2,13 @@ const express = require('express')
 var bodyParser = require('body-parser')
 const app = express();
 const line = require('@line/bot-sdk');
+const mysql = require('mysql');
+const conn = mysql.createConnection({
+   host: 'localhost',
+    user : 'root',
+    password :'',
+    database : 'linebot'
+})
 const port = process.env.PORT||5000
 
 
@@ -15,6 +22,16 @@ app.use(bodyParser.json())
 
 app.get('/',(req,res) =>{
     res.send({status: 'ok'});
+    conn.connect((err) =>{
+        if(err) throw err;
+            
+        })
+       let query =  conn.query(`select * from reply where reqdata = ${text}`,(error,result) =>{
+        if(error) throw console.error();
+       
+        })
+        console.log(query.sql)
+        conn.end();
    });
 
 app.post('/webhook',(req,res) =>{
