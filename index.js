@@ -23,7 +23,7 @@ app.post('/webhook',(req,res) =>{
     let source = events.source;
     let message = events.message;
     let type = events.type;
-    let type = events.replyToken;
+    let replyToken = events.replyToken;
     console.log(`body ===> `);
     console.log(body); 
     console.log(`source ===> `);
