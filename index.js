@@ -73,7 +73,7 @@ switch(type){
                 assert.equal(null,err);
                 var db = client.db(dbName)
                 const collection = db.collection('users');
-                collection.find({name: data},{ projection: {  _id: 0, name: 1  } }).toArray((err,result)=>{
+                collection.find({name: data}).toArray((err,result)=>{
                     if(err) throw err
                     console.log("Connected successfully to server");
                   var result =result[0].name;
