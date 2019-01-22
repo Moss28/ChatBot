@@ -33,7 +33,7 @@ app.post('/webhook',(req,res) =>{
         assert.equal(null,err);
         var db = client.db(dbName)
         const collection = db.collection('users');
-        collection.find({name: "Moss"},).toArray((err,result)=>{
+        collection.find({name: "Moss"},{ projection: {  _id: 0, name: 1  } }).toArray((err,result)=>{
             if(err) throw err
             console.log("Connected successfully to server");
             console.log(result);
@@ -71,22 +71,17 @@ switch(type){
     let id = message.id;
         if(type =='text'){
 
-            let text = message.text;
+           
             const messageResponse = [
             {
                 type: 'text',
                 text: 'Moss สวัสดีครับ'
-            },
-            {
-                type: 'sticker',
-                stickerId: '2',
-                packageId: '1'
             }
         
         ];
             
            replyMessage(replyToken, messageResponse)
-            }
+        }
 
         else if(type =='sticker'){
             let stickerId = message.stickerId;
