@@ -76,22 +76,31 @@ switch(type){
                 collection.find({name: data}).toArray((err,result)=>{
                     if(err) throw err
                     console.log("Connected successfully to server");
+             switch(key){
+                        case 'name':
                   var result =result[0].name;
                     console.log(result);
-                    
+                 const messageResponse = [
+                    { 
+               
+                            type: 'text',
+                            text: 'ชื่อ' + result
+            
+                    }
+                 ];
+                 break;
+                 case 'age':
+                 break;
+                 default:
+                 break;
+
+                }
                
                 })
             })
 
-            const messageResponse = [
-            { 
-               
-                type: 'text',
-                text: result
-            
-            }
+           
         
-        ];
             
            replyMessage(replyToken, messageResponse)
         }
