@@ -77,21 +77,35 @@ switch(type){
                     if(err) throw err
                     console.log("Connected successfully to server");
              switch(key){
-                        case 'name':
-                  var result =result[0].name;
-                    console.log(`result ===> `);
-                    console.log(result);
-                    const messageResponse = [
-                    { 
-               
-                            type: 'text',
-                            text: 'ชื่อ'+ result
-            
-                    }
-                 ];
-                 replyMessage(replyToken, messageResponse)
+                 case 'name':
+                                var result =result[0].name;
+                                console.log(`result ===> `);
+                                console.log(result);
+                                const messageResponse = [
+                                { 
+                        
+                                        type: 'text',
+                                        text:  result + ' คือใคร? '
+                        
+                                }
+                                ];
+                                replyMessage(replyToken, messageResponse)
                  break;
                  case 'age':
+                 var result1 =result[0].name;
+                 var result2 =result[0].age;
+                 console.log(`result ===> `);
+                 console.log(result);
+                 const messageResponse = [
+                 { 
+         
+                         type: 'text',
+                         text:  result1 + ' are ' + result2 + ' years old. '
+         
+                 }
+                 ];
+                 replyMessage(replyToken, messageResponse)
+
                  break;
                  default:
                  break;
