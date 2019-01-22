@@ -96,7 +96,7 @@ switch(type){
                                 var result2 =result[0].age;
                                 console.log(`result ===> `);
                                 console.log(result1);
-                                const messageResponse = [
+                                const messageResponse1 = [
                                 { 
                         
                                         type: 'text',
@@ -104,7 +104,7 @@ switch(type){
                         
                                 }
                                 ];
-                                replyMessage(replyToken, messageResponse)
+                                replyMessage(replyToken, messageResponse1)
 
                  break;
                  default:
