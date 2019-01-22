@@ -89,6 +89,7 @@ switch(type){
             
                     }
                  ];
+                 replyMessage(replyToken, messageResponse)
                  break;
                  case 'age':
                  break;
@@ -103,7 +104,7 @@ switch(type){
            
         
             
-           replyMessage(replyToken, messageResponse)
+           
         }
 
         else if(type =='sticker'){
