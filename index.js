@@ -79,12 +79,13 @@ switch(type){
              switch(key){
                         case 'name':
                   var result =result[0].name;
+                    console.log(`result ===> `);
                     console.log(result);
-                 const messageResponse = [
+                    const messageResponse = [
                     { 
                
                             type: 'text',
-                            text: 'ชื่อ' + result
+                            text: 'ชื่อ'
             
                     }
                  ];
