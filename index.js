@@ -62,11 +62,11 @@ switch(type){
     let id = message.id;
         if(type =='text'){
             var messagedata = text.split(" ");
-            var key = messagedata[0];
+            let key = messagedata[0];
             var data = messagedata[1];
 
             if (key=='img'){
-                key = imgUrl;
+                key = 'imgUrl';
             }
                 console.log(`key ===> `);
                 console.log(key);
