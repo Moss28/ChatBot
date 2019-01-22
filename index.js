@@ -81,7 +81,7 @@ switch(type){
                                 var result =result[0].name;
                                 console.log(`result ===> `);
                                 console.log(result);
-                                const messageResponse = [
+                                const messageResponsename = [
                                 { 
                         
                                         type: 'text',
@@ -89,14 +89,14 @@ switch(type){
                         
                                 }
                                 ];
-                                replyMessage(replyToken, messageResponse)
+                                replyMessage(replyToken, messageResponsename)
                  break;
                  case 'age':
                                 var result1 =result[0].name;
                                 var result2 =result[0].age;
                                 console.log(`result ===> `);
                                 console.log(result1);
-                                const messageResponse1 = [
+                                const messageResponseage = [
                                 { 
                         
                                         type: 'text',
@@ -104,7 +104,23 @@ switch(type){
                         
                                 }
                                 ];
-                                replyMessage(replyToken, messageResponse1)
+                                replyMessage(replyToken, messageResponseage)
+
+                 break;
+                 case 'facebook':
+                                var result1 =result[0].name;
+                                var result2 =result[0].facebook;
+                                console.log(`result ===> `);
+                                console.log(result1);
+                                const messageResponse = [
+                                { 
+                        
+                                        type: 'text',
+                                        text:  result1 + ' are ' + result2 + ' years old. '
+                        
+                                }
+                                ];
+                                replyMessage(replyToken, messageResponse)
 
                  break;
                  default:
