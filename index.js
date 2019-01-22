@@ -64,6 +64,10 @@ switch(type){
             var messagedata = text.split(" ");
             var key = messagedata[0];
             var data = messagedata[1];
+
+            if (key= 'img'){
+                key = imgUrl;
+            }
                 console.log(`key ===> `);
                 console.log(key);
                 console.log(`data ===> `);
@@ -81,7 +85,7 @@ switch(type){
                                 var result =result[0].name;
                                 console.log(`result ===> `);
                                 console.log(result);
-                                const messageResponsename = [
+                                const messageResponse = [
                                 { 
                         
                                         type: 'text',
@@ -89,27 +93,11 @@ switch(type){
                         
                                 }
                                 ];
-                                replyMessage(replyToken, messageResponsename)
+                                replyMessage(replyToken, messageResponse)
                  break;
                  case 'age':
                                 var result1 =result[0].name;
                                 var result2 =result[0].age;
-                                console.log(`result ===> `);
-                                console.log(result1);
-                                const messageResponseage = [
-                                { 
-                        
-                                        type: 'text',
-                                        text:  result1 + ' are ' + result2 + ' years old. '
-                        
-                                }
-                                ];
-                                replyMessage(replyToken, messageResponseage)
-
-                 break;
-                 case 'facebook':
-                                var result1 =result[0].name;
-                                var result2 =result[0].facebook;
                                 console.log(`result ===> `);
                                 console.log(result1);
                                 const messageResponse = [
@@ -123,6 +111,38 @@ switch(type){
                                 replyMessage(replyToken, messageResponse)
 
                  break;
+                 case 'facebook':
+                                var result1 =result[0].name;
+                                var result2 =result[0].facebook;
+                                console.log(`result ===> `);
+                                console.log(result1);
+                                const messageResponse = [
+                                { 
+                        
+                                        type: 'text',
+                                        text: 'Facebook is'  + result1 + ' are ' + result2 
+                        
+                                }
+                                ];
+                                replyMessage(replyToken, messageResponse)
+
+                 break;
+                 case 'img':
+                                var result1 =result[0].name;
+                                var result2 =result[0].imgUrl;
+                                console.log(`result ===> `);
+                                console.log(result1);
+                                const messageResponse = [
+                                { 
+                                    "type": "image",
+                                    "originalContentUrl": result2 ,
+                                    "previewImageUrl": result2
+                        
+                                }
+                                ];
+                                replyMessage(replyToken, messageResponse)
+
+                break;
                  default:
                  break;
 
