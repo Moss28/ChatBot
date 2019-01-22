@@ -29,19 +29,7 @@ app.get('/',(req,res) =>{
 
 app.post('/webhook',(req,res) =>{
 
-    MongoClient.connect(dbUrl,(err,client)=>{
-        assert.equal(null,err);
-        var db = client.db(dbName)
-        const collection = db.collection('users');
-        collection.find({name: "Moss"},{ projection: {  _id: 0, name: 1  } }).toArray((err,result)=>{
-            if(err) throw err
-            console.log("Connected successfully to server");
-            console.log(result);
-            var Array = req.body.data;
-            res.end(Array[0]["name"].toString());
-       
-        })
-    })
+   
 
  
     let body = req.body;
@@ -73,11 +61,24 @@ switch(type){
     let id = message.id;
         if(type =='text'){
 
+            MongoClient.connect(dbUrl,(err,client)=>{
+                assert.equal(null,err);
+                var db = client.db(dbName)
+                const collection = db.collection('users');
+                collection.find({name: text},{ projection: {  _id: 0, name: 1  } }).toArray((err,result)=>{
+                    if(err) throw err
+                    console.log("Connected successfully to server");
+                    console.log(result);
+                    
+               
+                })
+            })
+
            
             const messageResponse = [
             {
                 type: 'text',
-                text: result
+                text: 'ดี'
             }
         
         ];
