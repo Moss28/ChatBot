@@ -68,17 +68,17 @@ switch(type){
                 collection.find({name: text},{ projection: {  _id: 0, name: 1  } }).toArray((err,result)=>{
                     if(err) throw err
                     console.log("Connected successfully to server");
+                    result =result[0].name;
                     console.log(result);
                     
                
                 })
             })
 
-           
             const messageResponse = [
             {
                 type: 'text',
-                text: 'ดี'
+                text: result
             }
         
         ];
