@@ -75,7 +75,7 @@ switch(type){
             const messageResponse = [
             {
                 type: 'text',
-                text: 'Moss สวัสดีครับ'
+                text: result
             }
         
         ];
