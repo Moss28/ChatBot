@@ -100,7 +100,7 @@ switch(type){
                                 var result2 =result[0].age;
                                 console.log(`result ===> `);
                                 console.log(result1);
-                                const messageResponse = [
+                                const messageResponseage = [
                                 { 
                         
                                         type: 'text',
@@ -108,7 +108,7 @@ switch(type){
                         
                                 }
                                 ];
-                                replyMessage(replyToken, messageResponse)
+                                replyMessage(replyToken, messageResponseage)
 
                  break;
                  case 'facebook':
@@ -116,7 +116,7 @@ switch(type){
                                 var result2 =result[0].facebook;
                                 console.log(`result ===> `);
                                 console.log(result1);
-                                const messageResponse = [
+                                const messageResponsefacebook = [
                                 { 
                         
                                         type: 'text',
@@ -124,7 +124,7 @@ switch(type){
                         
                                 }
                                 ];
-                                replyMessage(replyToken, messageResponse)
+                                replyMessage(replyToken, messageResponsefacebook)
 
                  break;
                  case 'img':
@@ -132,7 +132,7 @@ switch(type){
                                 var result2 =result[0].imgUrl;
                                 console.log(`result ===> `);
                                 console.log(result1);
-                                const messageResponse = [
+                                const messageResponseimg = [
                                 { 
                                     "type": "image",
                                     "originalContentUrl": result2 ,
@@ -140,7 +140,7 @@ switch(type){
                         
                                 }
                                 ];
-                                replyMessage(replyToken, messageResponse)
+                                replyMessage(replyToken, messageResponseimg)
 
                 break;
                  default:
