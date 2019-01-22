@@ -85,7 +85,7 @@ switch(type){
                     { 
                
                             type: 'text',
-                            text: 'ชื่อ'
+                            text: 'ชื่อ'+ result
             
                     }
                  ];
