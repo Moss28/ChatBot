@@ -92,20 +92,7 @@ switch(type){
                                 replyMessage(replyToken, messageResponse)
                  break;
                  case 'age':
-                 var result1 =result[0].name;
-                 var result2 =result[0].age;
-                 console.log(`result ===> `);
-                 console.log(result);
-                 const messageResponse = [
-                 { 
-         
-                         type: 'text',
-                         text:  result1 + ' are ' + result2 + ' years old. '
-         
-                 }
-                 ];
-                 replyMessage(replyToken, messageResponse)
-
+                              
                  break;
                  default:
                  break;
