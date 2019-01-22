@@ -147,24 +147,13 @@ switch(type){
                 const messageResponsehelp = [
                     { 
                         type: 'text',
-                        text: 'ท่านสามารถใช้คำสั่ง เหล่านี้ได้'
-                    },
-                    { 
-                        type: 'text',
-                        text: '- name <name>'
-                    },
-                    { 
-                        type: 'text',
-                        text: '- img <name>'
-                    },
-                    { 
-                        type: 'text',
-                        text: '- facebook <name>'
-                    },
-                    { 
-                        type: 'text',
+                        text: 'ท่านสามารถใช้คำสั่ง เหล่านี้ได้',
+                        text: '- name <name>',
+                        text: '- facebook <name>',
+                        text: '- img <name>',
                         text: '- age <name>'
                     }
+                 
                     ];
                     replyMessage(replyToken, messageResponsehelp)
                 break;
