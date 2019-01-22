@@ -37,6 +37,8 @@ app.post('/webhook',(req,res) =>{
             if(err) throw err
             console.log("Connected successfully to server");
             console.log(result);
+            var Array = req.body.data;
+            res.end(Array[0]["name"].toString());
        
         })
     })
