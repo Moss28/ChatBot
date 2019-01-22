@@ -120,7 +120,7 @@ switch(type){
                                 { 
                         
                                         type: 'text',
-                                        text: 'Facebook is'  + result1 + ' are ' + result2 
+                                        text: 'Facebook is '  + result1 + ' are ' + result2 
                         
                                 }
                                 ];
@@ -143,7 +143,40 @@ switch(type){
                                 replyMessage(replyToken, messageResponseimg)
 
                 break;
+                case 'help':
+                const messageResponsehelp = [
+                    { 
+                        type: 'text',
+                        text: 'ท่านสามารถใช้คำสั่ง เหล่านี้ได้'
+                    },
+                    { 
+                        type: 'text',
+                        text: '- name <name>'
+                    },
+                    { 
+                        type: 'text',
+                        text: '- img <name>'
+                    },
+                    { 
+                        type: 'text',
+                        text: '- facebook <name>'
+                    },
+                    { 
+                        type: 'text',
+                        text: '- age <name>'
+                    }
+                    ];
+                    replyMessage(replyToken, messageResponsehelp)
+                break;
                  default:
+                 const messageResponsehelp2 = [
+                    { 
+                        type: 'text',
+                        text: 'ท่านใช้คำสั่งไม่ถูกต้องกรุณากด help เพื่อขอความช่วยเหลือ'
+                    }
+                    ];
+                    replyMessage(replyToken, messageResponsehelp2)
+
                  break;
 
                 }
