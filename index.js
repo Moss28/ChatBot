@@ -46,6 +46,7 @@ app.post('/webhook',(req,res) =>{
     let events = body.events[0];
     let source = events.source;
     let message = events.message;
+    let text = events.text;
     let type = events.type;
 
     let replyToken = events.replyToken;
@@ -65,8 +66,8 @@ switch(type){
 
     let type = message.type;
     console.log(`[message type] ===> ${type}`);
-    let message = message.message;
-    console.log(`[message] ===> ${message}`);
+    let text = message.text;
+    console.log(`[text] ===> ${text}`);
     let id = message.id;
         if(type =='text'){
 
