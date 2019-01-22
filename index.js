@@ -68,7 +68,7 @@ switch(type){
                 collection.find({name: text},{ projection: {  _id: 0, name: 1  } }).toArray((err,result)=>{
                     if(err) throw err
                     console.log("Connected successfully to server");
-                  var result =result[0].age;
+                  var result =result[1].age;
                     console.log(result);
                     
                
