@@ -37,6 +37,7 @@ app.post('/webhook',(req,res) =>{
     let source = events.source;
     let message = events.message;
     let text = events.text;
+  
     let type = events.type;
 
     let replyToken = events.replyToken;
@@ -60,6 +61,7 @@ switch(type){
     console.log(`[text] ===> ${text}`);
     let id = message.id;
         if(type =='text'){
+            var text = str.split(" ", 1);
 
             MongoClient.connect(dbUrl,(err,client)=>{
                 assert.equal(null,err);
