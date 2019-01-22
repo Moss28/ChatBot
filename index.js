@@ -2,39 +2,44 @@ const express = require('express')
 var bodyParser = require('body-parser')
 const app = express();
 const line = require('@line/bot-sdk');
-const mysql = require('mysql');
-const conn = mysql.createConnection({
-   host: 'localhost',
-    user : 'root',
-    password :'',
-    database : 'linebot'
-})
+const MongoClient = require('mongodb').MongoClient
+const assert = require('assert');
+//connect URL
+const dbUrl = 'mongodb://user02:user02@ds157834.mlab.com:57834/smartqr';
+//Database Name
+const dbName = 'smartqr';
+
 const port = process.env.PORT||5000
 
 
 const client = new line.Client({
     channelAccessToken: 'ANOX1QMOTFBIbkZJfyAd/seoFWVhEhtOwzgiqi3HZkmoJSzyTTyl2darpUtsVKZj+Ytm1FjWviHZHFmGQ26Ue/Ar3PNsFVFn3D/AG9p+8exS5I633TiLLhEbdcWpxG8tB5Dj3w6ZOK7gHchYTHsuVAdB04t89/1O/w1cDnyilFU='
   });
-  
-conn.connect(function(err) {
-    if (err) throw console.err();
-    console.log("Connected!");
-  });
+
+
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(bodyParser.json())
 
 app.get('/',(req,res) =>{
-    res.send({status: 'ok'});
-   
-      
+
+     res.send({status: 'ok'});     
    });
 
-
-  
-
 app.post('/webhook',(req,res) =>{
+
+    MongoClient.connect(dbUrl,(err,client)=>{
+        assert.equal(null,err);
+        var db = client.db(dbName)
+        const collection = db.collection('users');
+        collection.find({name: "Moss"},).toArray((err,result)=>{
+            if(err) throw err
+            console.log("Connected successfully to server");
+            console.log(result);
+       
+        })
+    })
 
  
     let body = req.body;
@@ -42,6 +47,7 @@ app.post('/webhook',(req,res) =>{
     let source = events.source;
     let message = events.message;
     let type = events.type;
+
     let replyToken = events.replyToken;
     console.log(`body ===> `);
     console.log(body); 
@@ -57,12 +63,13 @@ app.post('/webhook',(req,res) =>{
 switch(type){
     case 'message':
 
-  
-    
     let type = message.type;
     console.log(`[message type] ===> ${type}`);
+    let message = message.message;
+    console.log(`[message] ===> ${message}`);
     let id = message.id;
         if(type =='text'){
+
             let text = message.text;
             const messageResponse = [
             {
@@ -83,7 +90,6 @@ switch(type){
         else if(type =='sticker'){
             let stickerId = message.stickerId;
             let packageId = message.packageId;
-
         }
 
     break;
