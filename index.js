@@ -65,7 +65,7 @@ switch(type){
             var key = messagedata[0];
             var data = messagedata[1];
 
-            if (key= 'img'){
+            if (key=='img'){
                 key = imgUrl;
             }
                 console.log(`key ===> `);
