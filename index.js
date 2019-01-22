@@ -127,7 +127,7 @@ switch(type){
                                 replyMessage(replyToken, messageResponsefacebook)
 
                  break;
-                 case 'img':
+                 case 'imgUrl':
                                 var result1 =result[0].name;
                                 var result2 =result[0].imgUrl;
                                 console.log(`result ===> `);
