@@ -61,13 +61,13 @@ switch(type){
     console.log(`[text] ===> ${text}`);
     let id = message.id;
         if(type =='text'){
-            var text = str.split(" ", 1);
-
+            var key = text.split(" ", 1);
+            console.log(`[key] ===> ${key}`);
             MongoClient.connect(dbUrl,(err,client)=>{
                 assert.equal(null,err);
                 var db = client.db(dbName)
                 const collection = db.collection('users');
-                collection.find({name: text},{ projection: {  _id: 0, name: 1  } }).toArray((err,result)=>{
+                collection.find({name: text},{ projection: {  _id: 0, key: 1  } }).toArray((err,result)=>{
                     if(err) throw err
                     console.log("Connected successfully to server");
                   var result =result[0].name;
