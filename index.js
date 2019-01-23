@@ -146,7 +146,8 @@ switch(type){
                 case 'help':
                 const messageResponsehelp = [
                     { 
-                        type: 'text \nท่านสามารถใช้คำสั่ง เหล่านี้ได้ \n- name <name> \n- facebook <name> \n- img <name> \n- age <name> '
+                        type: 'text',
+                        text: 'ท่านสามารถใช้คำสั่ง เหล่านี้ได้ \n- name <name> \n- facebook <name> \n- img <name> \n- age <name> '
                     
                     }
                  
